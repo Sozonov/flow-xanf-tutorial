@@ -98,3 +98,44 @@ type UserType = {
     }
 }
 ```
+
+## Видео 5
+
+### Вызов функции сбрасывает уточнение типов
+
+```
+function logID({ id }: { id: string }) {}
+if (u.id) {
+  // u.id: string
+  logID({ id: u.id })
+  // u.id: string | void !!!
+  u.id.includes('-')
+}
+```
+
+Решение - сохранение id в переменную:
+
+```
+if (u.id) {
+  const { id } = u
+  logID({ id })
+  id.includes('-')
+}
+```
+
+### %checks
+
+```
+function ensureID(id: mixed): boolean %checks {
+  return typeof id === 'string'
+}
+const { id } = u
+if (ensureID(id)) {
+  logID({ id })
+  id.includes('-')
+}
+```
+
+### Проверка, что в свиче проверили все варианты
+
+В default пишем привидение к типу `empty` (cм video05.js)
