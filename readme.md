@@ -21,3 +21,14 @@ module.name_mapper='^\.\./svg-icons\/.*$' -> 'any'
 flowtype - заставляет писать `// @flow` в начале файла
 
 ## Видео 2
+
+## Видео 3
+
+### Unsealed object
+
+Небезопасное поведение
+
+```
+const config = {}
+config.foo.toLowerCase() // не будет ошибки, а config.foo будет типа any
+```
