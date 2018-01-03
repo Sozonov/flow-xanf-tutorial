@@ -10,5 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "flow-bin": "^0.62.0"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "ramda": "^0.25.0",
+    "recompose": "^0.26.0"
   }
 }
