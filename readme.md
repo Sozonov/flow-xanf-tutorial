@@ -176,3 +176,15 @@ function addUuid<T: { id: string }>(o: T): { ...$Exact<T>, uuid: string } {
 ```
 
 `T: { id: string }` - ограничение на дженерик, требующее наличие поля id. Благодаря ему flow не ругается на выражение o.id
+
+## Видео 12. Opaque Types
+
+Opaque тип может быть создан только внутри файла, где он объявлен.
+Из "внешнего мира" он как черный ящик, т.е. мы не видим его поля. Через двоеточие мы указываем как он будет выглядить из вне.
+
+```
+export opaque type VerifiedPayment: PaymentWithVerified = {
+  ...$Exact<Payment>,
+  verified: true
+}
+```
