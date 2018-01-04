@@ -1,4 +1,4 @@
-# Код из уроков Ильи климова по FLOW
+# Код из уроков Ильи Климова по flow
 
 Ссылка на уроки: https://www.youtube.com/watch?v=9_GwX9O6DFE&list=PLvTBThJr861zvILAjREUakZ6E5l7h7lsZ
 
