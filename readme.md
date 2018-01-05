@@ -214,3 +214,8 @@ function getField<O: *, F: string>(obj: O, field: F): $ElementType<O, F>
 ```
 
 Тут `O: *` - говорит flow вывести этот тип самому. Если написать `O: {}`, то при `getField(u, 'age')` flow скажет, что не может найти поле `age` у `{}`
+
+## Видео 15. $ObjMap, $TuppleMap
+
+* $ObjMap - применяет функцию к каждому элементу object. Возвращает тип с теми же полями как object. Поля будут иметь такой тип, который вернула вызываемая функция:
+  `async function props<P: promisesObject>(promisesObject: P): Promise<$ObjMap<P, ExtractPromiseTypeFn>>`
